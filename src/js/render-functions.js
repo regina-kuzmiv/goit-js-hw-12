@@ -6,6 +6,7 @@ export const refs = {
   submitBtn: document.querySelector('.js-submit-btn'),
   gallery: document.querySelector('.js-gallery'),
   loader: document.querySelector('.loader'),
+  loaderBtn: document.querySelector('.js-load-more-btn'),
 };
 
 const lightBox = new SimpleLightbox('.js-gallery a');
@@ -57,4 +58,11 @@ export const showLoader = () => {
 
 export const hideLoader = () => {
   refs.loader.classList.remove('is-visible');
+};
+
+export const showLoadMoreButton = () => {
+  refs.loaderBtn.classList.add();
+};
+export const hideLoadMoreButton = () => {
+  refs.loaderBtn.classList.remove();
 };

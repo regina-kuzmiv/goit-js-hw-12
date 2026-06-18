@@ -7,7 +7,7 @@ form {
   gap: 8px;
 }
 
-.form button {
+button {
   width: 91px;
   height: 40px;
   border-radius: 8px;
@@ -23,7 +23,7 @@ form {
   padding: 8px 16px;
   border-style: none;
 }
-.form button:hover {
+button:hover {
   background-color: #6c8cff;
 }
 .form input {
@@ -43,4 +43,21 @@ form {
   border-color: #4e75ff;
   outline: none;
   color: #2e2f42;
+}
+.load-more-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 125px;
+  position: fixed;
+  bottom: 44px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+.load-more-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
