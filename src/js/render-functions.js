@@ -61,8 +61,8 @@ export const hideLoader = () => {
 };
 
 export const showLoadMoreButton = () => {
-  refs.loaderBtn.classList.add();
+  refs.loaderBtn.classList.add('is-visible');
 };
 export const hideLoadMoreButton = () => {
-  refs.loaderBtn.classList.remove();
+  refs.loaderBtn.classList.remove('is-visible');
 };

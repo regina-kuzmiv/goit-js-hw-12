@@ -45,13 +45,11 @@ button:hover {
   color: #2e2f42;
 }
 .load-more-btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
 
   width: 125px;
-  position: fixed;
-  bottom: 44px;
+  margin: 0 auto;
+  margin-bottom: 44px;
 
   opacity: 0;
   visibility: hidden;
