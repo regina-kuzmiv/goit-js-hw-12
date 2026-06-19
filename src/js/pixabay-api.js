@@ -9,7 +9,7 @@ export async function getImagesByQuery(query, page, perPage) {
       orientation: 'horizontal',
       safesearch: true,
       page,
-      per_page: perPage,
+      per_page: Math.max(15, perPage),
     },
   });
   return response.data;
