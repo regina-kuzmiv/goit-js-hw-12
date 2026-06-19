@@ -1,5 +1,3 @@
-// import axios from 'axios';
-
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
@@ -48,7 +46,13 @@ refs.formEl.addEventListener('submit', async e => {
 
     createGallery(data.hits);
 
-    if (perPage * page < totalHits) {
+    const isEnd = perPage * page >= totalHits;
+
+    if (isEnd) {
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+      });
+    } else {
       showLoadMoreButton();
     }
 
@@ -72,7 +76,6 @@ refs.loaderBtn.addEventListener('click', async () => {
     const data = await getImagesByQuery(query, page, perPage);
 
     createGallery(data.hits);
-    showLoadMoreButton();
 
     const card = document.querySelector('.gallery-item');
 
@@ -85,12 +88,16 @@ refs.loaderBtn.addEventListener('click', async () => {
       });
     }
 
-    if (page * perPage >= totalHits) {
+    const isEnd = page * perPage >= totalHits;
+
+    if (isEnd) {
       hideLoadMoreButton();
 
       iziToast.info({
         message: "We're sorry, but you've reached the end of search results.",
       });
+    } else {
+      showLoadMoreButton();
     }
   } catch (error) {
     iziToast.error({
